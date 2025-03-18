@@ -1,0 +1,125 @@
+/* Styles.css */
+
+/* Define colour variables for light mode */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --text-color: #333;
+    --background-color: #fff;
+    --nav-background: #f4f4f4;
+    --link-color: #3498db;
+  }
+  
+  /* Dark mode variables (activated by .dark-mode on body) */
+  body.dark-mode {
+    --text-color: #f4f4f4;
+    --background-color: #333;
+    --nav-background: #444;
+    --link-color: #2ecc71;
+  }
+  
+  /* Reset and base styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    padding: 0 20px;
+  }
+  
+  /* Navigation */
+  header {
+    background: var(--nav-background);
+    padding: 10px 0;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-list li {
+    margin-right: 20px;
+  }
+  
+  .nav-list li a {
+    text-decoration: none;
+    color: var(--link-color);
+    font-weight: bold;
+  }
+  
+  .nav-list li a.active,
+  .nav-list li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Mode Toggle Button */
+  #mode-toggle {
+    background: none;
+    border: 2px solid var(--link-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--link-color);
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  #mode-toggle:hover {
+    background: var(--link-color);
+    color: var(--background-color);
+  }
+  
+  /* Main Content */
+  main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+    }
+    .nav-list {
+      flex-direction: column;
+      align-items: center;
+    }
+    .nav-list li {
+      margin: 10px 0;
+    }
+    #mode-toggle {
+      margin-top: 10px;
+    }
+  }
+  
