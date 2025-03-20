@@ -1,35 +1,114 @@
-<!-- index.html - Aliza Lim 2025 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aliza Lim - Home</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <!-- Header with Logo, Dark Mode Toggle, and Hamburger Icon -->
   <header>
-    <nav>
-      <ul class="nav-list">
-        <li><a href="index.html" class="active">Home</a></li>
+    <div class="header-container">
+      <a href="index.html" class="logo">Aliza Lim</a>
+      <div class="header-icons">
+        <button id="mode-toggle" class="mode-toggle">🌙</button>
+        <div class="hamburger" id="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar Hamburger Menu (25% of Screen) -->
+    <nav class="overlay-menu" id="overlay-menu">
+      <button class="close-menu" id="close-menu">&times;</button>
+      <ul class="menu-list">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-submenu">
+          <a href="#">Design Work</a>
+          <ul class="submenu">
+            <li><a href="test-to-own.html">Test to Own</a></li>
+            <li><a href="redefining-car-buying.html">Redefining Car Buying</a></li>
+            <li><a href="career-forge.html">Career Forge</a></li>
+            <li><a href="project4.html">Project 4</a></li>
+          </ul>
+        </li>
         <li><a href="about.html">About</a></li>
-        <li><a href="designs.html">Designs</a></li>
       </ul>
-      <button id="mode-toggle">Dark Mode</button>
     </nav>
   </header>
 
-  <main>
-    <h1>Welcome to Aliza's Site</h1>
-    <p>Discover my portfolio of designs and insights into my creative journey.</p>
-  </main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <!-- Left: Header Text with Dropdown (no extra padding) -->
+      <div class="hero-text">
+        <h1>
+          Aliza is a <br>
+          <span class="dropdown-wrapper">
+            <select id="role-dropdown">
+              <option value="product-designer" selected>Product Designer</option>
+              <option value="storyteller">Storyteller</option>
+            </select>
+          </span>
+        </h1>
+      </div>
+      <!-- Right: Image tied to Dropdown -->
+      <div class="hero-image">
+        <img id="role-image" src="images/header-productdesigner.png" alt="Product Designer" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies Section (Preserved Cards) -->
+  <section class="case-studies">
+    <!-- Case Study 1: Thumbnail Left, Text Right -->
+    <div class="case-study">
+      <div class="case-image">
+        <img src="https://via.placeholder.com/300" alt="Case Study 1 Thumbnail">
+      </div>
+      <div class="case-content">
+        <h2>Case Study 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel ligula scelerisque, finibus odio et, sagittis leo.</p>
+      </div>
+    </div>
+    <!-- Case Study 2: Thumbnail Right, Text Left -->
+    <div class="case-study reverse">
+      <div class="case-image">
+        <img src="https://via.placeholder.com/300" alt="Case Study 2 Thumbnail">
+      </div>
+      <div class="case-content">
+        <h2>Case Study 2</h2>
+        <p>Donec sit amet justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
+      </div>
+    </div>
+    <!-- Case Study 3: Thumbnail Left, Text Right -->
+    <div class="case-study">
+      <div class="case-image">
+        <img src="https://via.placeholder.com/300" alt="Case Study 3 Thumbnail">
+      </div>
+      <div class="case-content">
+        <h2>Case Study 3</h2>
+        <p>Curabitur eleifend, lacus a ultricies semper, risus ex cursus eros, ac sollicitudin lectus ligula non nisi.</p>
+      </div>
+    </div>
+    <!-- Case Study 4: Thumbnail Right, Text Left -->
+    <div class="case-study reverse">
+      <div class="case-image">
+        <img src="https://via.placeholder.com/300" alt="Case Study 4 Thumbnail">
+      </div>
+      <div class="case-content">
+        <h2>Case Study 4</h2>
+        <p>Sed euismod, turpis non bibendum dictum, urna dui placerat ipsum, at porttitor sapien elit a arcu. Vivamus varius sapien non quam cursus, at vestibulum orci dapibus.</p>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    <p>© 2025 Aliza Lim</p>
+    <p>&copy; 2025 Aliza Lim</p>
   </footer>
 
   <script src="js/main.js"></script>
 </body>
 </html>
-
