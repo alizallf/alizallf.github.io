@@ -1,11 +1,11 @@
 /* --- Colour Variables --- */
 :root {
-    --primary-color: #3498db;
+    --primary-color: #b5166b;
     --secondary-color: #2ecc71;
     --text-color: #333;
     --background-color: #fff;
     --nav-background: #f4f4f4;
-    --link-color: #3498db;
+    --link-color: #5218a9;
     --highlight-color: #f9f871; /* light yellow highlight */
   }
   
@@ -23,22 +23,28 @@
     padding: 0;
     box-sizing: border-box;
   }
+
   body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    position: relative;
+    min-height: 100vh;
+    font-family: 'Inter', Arial, sans-serif; /* changed the primary to Inter */
     color: var(--text-color);
     background-color: var(--background-color);
     line-height: 1.6;
-    padding: 0 20px;
+    padding: 0; 
   }
+
   
   /* --- Header & Navigation --- */
   header {
+    width: 100%;
     background: var(--nav-background);
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid #ccc;
   }
+
   .header-container {
     display: flex;
     justify-content: space-between;
@@ -156,119 +162,373 @@
   }
   
   /* --- Hero Section --- */
-  .hero {
-    background-color: #f8ccd4; /* light pastel pink */
-    height: 66vh; /* 2/3 of viewport height */
+.hero {
+  width: 100 vw; /* Ensures it stretches full width */
+  background-color: #f9e5ef; /* Light pastel pink */
+  height: 66vh; /* 2/3 of viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.hero-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px; /* adjust this based on your design needs */
+  padding: 0 20px;
+}
+
+/* --- Text Section --- */
+.hero-text {
+  flex: 1;
+  text-align: left;
+}
+
+.hero h1 {
+  font-family: 'Avenir';
+  font-size: 1.8rem;
+  color: #343333;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Role Buttons (Side by Side) --- */
+.role-buttons {
+  display: flex;
+  gap: 1rem; /* Spacing between buttons */
+}
+
+
+.role-button {
+  background: #a478e2; /* purple */
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: auto;
+  min-width: 180px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 122, 255, 0.2);
+}
+
+.role-button:hover {
+  background: #a200cb;
+  box-shadow: 0px 6px 14px rgba(0, 94, 203, 0.3);
+}
+
+.role-button.active {
+  background: #f6b637;
+  box-shadow: 0px 4px 10px rgba(0, 94, 203, 0.4);
+}
+
+/* --- Image Section --- */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Ensure Image Fills Container --- */
+.hero-image img {
+  width: 100%;  /* Make sure it takes the full width */
+  max-width: 500px; /* Prevent excessive scaling */
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  transition: transform 0.8s ease-in-out; /* Smooth animation */
+}
+
+/* 🔄 Flip Animation */
+.flip {
+  transform: rotateY(180deg);
+  transition: transform 0.8s ease-in-out;
+  backface-visibility: hidden; /* Ensures the image doesn't disappear */
+}
+
+/* --- Flip Animation for Role Image --- */
+@keyframes flip-animation {
+  0% { transform: perspective(600px) rotateY(0deg); }
+  50% { transform: perspective(600px) rotateY(90deg); }
+  100% { transform: perspective(600px) rotateY(0deg); }
+}
+
+#role-image {
+  transition: transform 0.8s ease-in-out;
+}
+
+
+  /* --- Case Studies section at Homepage --- */
+.case-studies {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.case-study {
     display: flex;
     align-items: center;
-    padding: 0 50px;
-  }
-  .hero-container {
-    display: flex;
-    width: 100%;
     justify-content: space-between;
-    align-items: center;
-  }
-  .hero-text {
-    flex: 1;
-    padding-left: 0; /* Remove extra padding */
-  }
-  .hero h1 {
-    font-family: Avenir, Futura, sans-serif;
-    font-size: 2.5rem;
-    color: var(--text-color);
-    margin: 0;
-    line-height: 1.2;
-  }
-  .dropdown-wrapper {
-    position: relative;
-    display: inline-block;
-  }
-  .hero select {
-    font-size: 1em;
-    padding: 0.2em 1.5em 0.2em 0.5em; /* Reduced right padding */
-    border: none;
-    background: transparent;
-    color: var(--text-color);
-    outline: none;
-    cursor: pointer;
-    appearance: none;
-  }
-  .dropdown-wrapper::after {
-    content: '▼';
-    position: absolute;
-    right: 0.5em;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    color: var(--link-color);
-    font-size: 0.8em; /* Smaller arrow */
-  }
-  .hero select option:hover {
-    background-color: var(--highlight-color);
-    color: var(--text-color);
-  }
-  .hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .hero-image img {
-    width: 500px;
-    height: 500px;
-    border: none;
-    border-radius: 8px;
-    object-fit: cover;
-  }
-  
-  /* --- Flip Animation for Role Image --- */
-  @keyframes flip-animation {
-    0% { transform: perspective(600px) rotateY(0deg); }
-    50% { transform: perspective(600px) rotateY(90deg); }
-    100% { transform: perspective(600px) rotateY(0deg); }
-  }
-  #role-image.flip {
-    animation: flip-animation 0.8s ease-in-out forwards;
-  }
-  
-  /* --- Case Studies Section --- */
-  .case-studies {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-  }
-  .case-study {
-    display: flex;
-    align-items: center;
+    gap: 80px; /* Adjust this value for more spacing */
     margin-bottom: 40px;
-    gap: 20px;
   }
-  .case-study.reverse {
-    flex-direction: row-reverse;
-  }
-  .case-image {
-    flex: 1;
-    padding: 10px;
-  }
-  .case-image img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  .case-content {
-    flex: 1;
-    padding: 10px;
-  }
-  .case-content h2 {
-    margin-bottom: 10px;
-    font-size: 1.8rem;
-  }
-  .case-content p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
+
+.case-study.reverse {
+  flex-direction: row-reverse;
+}
+
+.case-image {
+  flex: 1;
+  padding: 10px;
+  width: 200px; /* Set a fixed width */
+  height: 350px; /* Set a fixed height */
+  overflow: hidden; /* Hide any overflowing parts of the image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-image img {
+  width: 100%; /* Ensures the image stretches to fit */
+  height: 100%; /* Ensures the image stretches to fit */
+  object-fit: cover; /* Crops the image to fit the container */
+  object-position: center; /* Centers the image */
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.case-image img:hover {
+  transform: scale(1.05);
+}
+.case-content {
+  flex: 1;
+  padding: 10px;
+}
+.case-content h2 {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+.case-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
+
+
+/* Case Study Individual Page Styles */
+.case-study-container {
+  max-width: 1000px;/* Adjust based on your layout */
+  margin: 0 auto;/* Centers everything */
+  padding: 0 20px; /* Add padding for smaller screens. previoisly was 40 and 20 */
+  font-family: 'Avenir', sans-serif;
+  color: #333;
+  line-height: 1.7;
+}
+
+
+
+.case-study-header-01 {
+  position: relative;
+  width: 100%;
+  height: 50vh; /* Large but not full-screen */
+  background: url('../images/- Macbook Air - Dark Background.png') center/cover no-repeat;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.case-study-header-02 {
+  position:relative;
+  transform: scale(0.9); /* Adjust the scale value as needed */
+  transform-origin: center; /* Ensures the image scales from the center */
+  height: 50vh; /* Large but not full-screen */
+  background: url('../images/-Buy\ Online\ -\ Header\ img.png') center/cover no-repeat;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.case-study-header-03 {
+  position:relative;
+  transform: scale(0.9); /* Adjust the scale value as needed */
+  transform-origin: center; /* Ensures the image scales from the center */
+  height: 50vh; /* Large but not full-screen */
+  background: url('../images/Careerforge-new.png') center/cover no-repeat;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+
+.case-study-header-04 {
+  position:relative;
+  transform: scale(0.9); /* Adjust the scale value as needed */
+  transform-origin: center; /* Ensures the image scales from the center */
+  height: 50vh; /* Large but not full-screen */
+  background: url('../images/GPT\ for\ Comms.png') center/cover no-repeat;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+
+
+/* Fade-out effect when scrolling */
+.case-study-header.fade-out {
+  opacity: 0;
+}
+
+
+
+
+/* 📌 Style the title below the image */
+/* Ensure title aligns with the content */
+.case-study-title {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 10px;  /* Space after the image */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;  /* Adjust to match content width */
+  padding-left: 10px; /* Adjust based on your content padding */
+}
+
+/* Text styling */
+.case-study-header h1 {
+  font-family: 'Avenir', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  max-width: 800px;
+  line-height: 1.2;
+  text-align: left;
+  max-width: 800px; /* Same as the container */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+/* Ensure content starts BELOW the header */
+.case-study-content {
+  position: relative;
+  padding-top: 55vh; /* Adjust so text is below image */
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "Avenir", sans-serif;
+  line-height: 1.6;
+}
+
+/* Section headings */
+.case-study-content h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0rem;
+  text-align: left;
+  max-width: 800px; /* Same as the container */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.case-study-content h3 {
+text-align: left;
+  max-width: 800px; /* Same as the container */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Paragraph styling */
+.case-study-content {
+  max-width: 800px;
+  margin: 0 auto 10rem; /* Centers horizontally + Adds bottom margin */
+  padding: 2rem 1rem; /* Adds spacing */
+}
+
+.case-study-content p {
+  margin-bottom: 1rem; /* Space between sections */
+}
+
+.case-study-content section {
+  margin-bottom: 4rem; /* Adjust spacing as needed */
+}
+
+.case-study-content section:nth-child(even) {
+  background-color: #F8FAFC;
+  padding: 40px 0; /* Remove horizontal padding */
+  border-radius: 0; /* Remove border radius to extend fully */
+  width: 100vw; /* Full viewport width */
+  position: relative;
+  left: -50vw;
+  right: -50vw;
+  margin-left: 50%;
+  margin-right: 50%;
+}
+
+.case-study-content section:nth-child(even) > * {
+  max-width: 800px; /* Keep inner content aligned */
+  margin: 0 auto;
+  padding: 0 40px; /* Restore padding inside */
+}
+
+/* Metadata styling */
+.case-study-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: #666;
+}
+
+.case-study-meta strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.case-study-img {
+  display: block;
+  max-width: 800px;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease-in-out; /* Smooth zoom transition */
+
+}
+
+/* Hover effect: zoom-in and then zoom-out */
+.case-study-img:hover {
+  transform: scale(1.05);
+}
+
+/* Ensure the wrapper centers the image */
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
   /* --- Footer --- */
   footer {
     text-align: center;
