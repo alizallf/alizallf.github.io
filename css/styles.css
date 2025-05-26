@@ -24,15 +24,16 @@
     box-sizing: border-box;
   }
 
-  body {
-    position: relative;
+
+    body {
+      position: relative;
     min-height: 100vh;
-    font-family: 'Inter', Arial, sans-serif; /* changed the primary to Inter */
-    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
     background-color: var(--background-color);
-    line-height: 1.6;
     padding: 0; 
-  }
+      line-height: 1.7;
+    }
+    
 
   
   /* --- Header & Navigation --- */
@@ -53,6 +54,7 @@
     margin: 0 auto;
     padding: 10px 20px;
   }
+
   .logo {
     font-size: 1.5rem;
     font-weight: bold;
@@ -163,7 +165,7 @@
   
   /* --- Hero Section --- */
 .hero {
-  width: 100 vw; /* Ensures it stretches full width */
+  width: 100vw; /* Ensures it stretches full width */
   background-color: #f9e5ef; /* Light pastel pink */
   height: 66vh; /* 2/3 of viewport height */
   display: flex;
@@ -187,9 +189,14 @@
   text-align: left;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
+
+
 .hero h1 {
-  font-family: 'Avenir';
-  font-size: 1.8rem;
+  font-family: 'Inter', sans-serif;
+    font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   color: #343333;
   margin-bottom: 1.5rem;
 }
@@ -269,6 +276,8 @@
   max-width: 1200px;
   margin: 40px auto;
   padding: 20px;
+  font-family: 'Inter', sans-serif;
+    color: #333;
 }
 
 .case-study {
@@ -278,6 +287,8 @@
     gap: 80px; /* Adjust this value for more spacing */
     margin-bottom: 40px;
   }
+
+  
 
 .case-study.reverse {
   flex-direction: row-reverse;
@@ -306,90 +317,98 @@
 .case-image img:hover {
   transform: scale(1.05);
 }
+
+
 .case-content {
   flex: 1;
   padding: 10px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
+
 .case-content h2 {
   margin-bottom: 10px;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
+  font-weight: 600; /* Adjust weight (Try 500 or 400 if still too bold) */
+  color:#401c9c;
+  font-family: 'Inter', sans-serif;
 }
+
 .case-content p {
   font-size: 1rem;
   line-height: 1.6;
+  font-weight: 400; /* Ensures normal weight */
+  font-family: 'Inter', sans-serif;
 }
 
 
 
 
 /* Case Study Individual Page Styles */
+
 .case-study-container {
-  max-width: 1000px;/* Adjust based on your layout */
-  margin: 0 auto;/* Centers everything */
-  padding: 0 20px; /* Add padding for smaller screens. previoisly was 40 and 20 */
-  font-family: 'Avenir', sans-serif;
-  color: #333;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 24px; /* Reduced top padding */
+  font-family: 'Inter', sans-serif;
+  color: #444444;
   line-height: 1.7;
 }
 
+/* Ensure title aligns with the content */
+.case-study-title {
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 10px;  /* Space after the image */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+  max-width: 800px;  /* Adjust to match content width */
+  padding: 1rem 1rem; /* Adds spacing */
+  text-align: center;
+}
 
 
-.case-study-header-01 {
-  position: relative;
+/* One hub to rule them all */
+.case-study-title h1 {
+  font-family: 'Inter', sans-serif;
+  color: #444444;
+  font-size:40px;
+  font-weight:600;
+}
+
+/*Designing a ... subtitle */
+.case-study-title h4 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #444444;
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+}
+
+.case-study-image-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 64px 0;
+}
+
+.case-study-header-img {
   width: 100%;
-  height: 50vh; /* Large but not full-screen */
-  background: url('../images/- Macbook Air - Dark Background.png') center/cover no-repeat;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  transition: opacity 0.5s ease-in-out;
+  max-width: 960px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
-.case-study-header-02 {
-  position:relative;
-  transform: scale(0.9); /* Adjust the scale value as needed */
-  transform-origin: center; /* Ensures the image scales from the center */
-  height: 50vh; /* Large but not full-screen */
-  background: url('../images/-Buy\ Online\ -\ Header\ img.png') center/cover no-repeat;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  transition: opacity 0.5s ease-in-out;
+.case-study-meta {
+  text-align: left;
+  font-size: 18px;
+  color: #444;
 }
-
-.case-study-header-03 {
-  position:relative;
-  transform: scale(0.9); /* Adjust the scale value as needed */
-  transform-origin: center; /* Ensures the image scales from the center */
-  height: 50vh; /* Large but not full-screen */
-  background: url('../images/Careerforge-new.png') center/cover no-repeat;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  transition: opacity 0.5s ease-in-out;
-}
-
-
-.case-study-header-04 {
-  position:relative;
-  transform: scale(0.9); /* Adjust the scale value as needed */
-  transform-origin: center; /* Ensures the image scales from the center */
-  height: 50vh; /* Large but not full-screen */
-  background: url('../images/GPT\ for\ Comms.png') center/cover no-repeat;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  transition: opacity 0.5s ease-in-out;
-}
-
 
 
 /* Fade-out effect when scrolling */
@@ -400,31 +419,19 @@
 
 
 
-/* 📌 Style the title below the image */
-/* Ensure title aligns with the content */
-.case-study-title {
-  text-align: left;
-  font-size: 1rem;
-  font-weight: bold;
-  margin-top: 10px;  /* Space after the image */
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 800px;  /* Adjust to match content width */
-  padding-left: 10px; /* Adjust based on your content padding */
-}
-
 /* Text styling */
 .case-study-header h1 {
-  font-family: 'Avenir', sans-serif;
-  font-size: 2.5rem;
+  font-family: 'Inter', sans-serif;
+    font-size: 28px;
   font-weight: bold;
-  color: white;
+  color: #333333;
   max-width: 800px;
   line-height: 1.2;
   text-align: left;
   max-width: 800px; /* Same as the container */
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.5;
 }
 
 
@@ -435,22 +442,25 @@
   padding-top: 55vh; /* Adjust so text is below image */
   max-width: 800px;
   margin: 0 auto;
-  font-family: "Avenir", sans-serif;
-  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+    line-height: 1.6;
 }
 
 /* Section headings */
 .case-study-content h2 {
-  font-size: 1.8rem;
+  color: #333333;
+  font-size: 24px;
   font-weight: bold;
   margin-bottom: 0rem;
   text-align: left;
   max-width: 800px; /* Same as the container */
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.5;
 }
 
 .case-study-content h3 {
+  color: #333333;
 text-align: left;
   max-width: 800px; /* Same as the container */
   margin-left: auto;
@@ -466,7 +476,13 @@ text-align: left;
 }
 
 .case-study-content p {
+  padding: 0.25rem 0rem; /* Adds spacing */
   margin-bottom: 1rem; /* Space between sections */
+  line-height: 1.75;
+  font-size: 16px;
+  color:#444444;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .case-study-content section {
@@ -488,7 +504,8 @@ text-align: left;
 .case-study-content section:nth-child(even) > * {
   max-width: 800px; /* Keep inner content aligned */
   margin: 0 auto;
-  padding: 0 40px; /* Restore padding inside */
+  padding: 0rem 1rem; /* Adds spacing */
+  margin-bottom: 5px;
 }
 
 /* Metadata styling */
@@ -496,9 +513,11 @@ text-align: left;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 2rem;
-  font-size: 1rem;
-  color: #666;
+  font-size: 16px;
+  color: #333333;
+  max-width: 800px;
+  margin: 0 auto; /* Centers horizontally + Adds bottom margin */
+  padding: 1rem 1rem; /* Adds spacing */
 }
 
 .case-study-meta strong {
