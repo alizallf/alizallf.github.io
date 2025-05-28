@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aliza Lim - Home</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  
+  <!-- The navigation will be dynamically loaded via JS (from nav.html) -->
+  
+
+
+  <!-- Hero Section with Pink Background -->
+<section class="hero">
+  <div class="hero-container">
+    <!-- Left: Text & Role Buttons -->
+    <div class="hero-text">
+      <h1>Aliza is a</h1>
+      <div class="role-buttons">
+        <button id="btn-product" class="role-button active" onclick="flipImage('images/header-productdesigner.png')">
+          Product Designer
+        </button>
+        <button id="btn-story" class="role-button" onclick="flipImage('images/header-storyteller.png')">
+          Storyteller
+        </button>
+      </div>
+    </div>
+    <!-- Right: Header Image -->
+    <div class="hero-image">
+      <img id="role-image" src="images/header-productdesigner.png" alt="Product Designer" />
+    </div>
+  </div>
+</section>
+
+
+  <!-- Case Studies Section -->
+  <section class="case-studies">
+    <!-- Case Study 1: Thumbnail Left, Text Right -->
+    <div class="case-study">
+      <div class="case-image">
+        <img src="./images/Final-Iteration.png" alt="Thumbnail image of Case Study 1">
+      </div>
+      <div class="case-content">
+        <h2>Test to Own: Expanding into New Car Sales</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel ligula scelerisque, finibus odio et, sagittis leo.</p>
+      </div>
+  </div>
+
+
+    <!-- Case Study 2: Thumbnail Right, Text Left -->
+    <div class="case-study reverse">
+      <div class="case-image">
+        <img src="./images/-Buy Online - Header img.png" alt="Thumbnail image of Case Study 2">
+      </div>
+      <div class="case-content">
+        <h2>Driving UX Forward: Designing a Better Car-Buying Journey</h2>
+        <p>Donec sit amet justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
+      </div>
+    </div>
+
+
+    <!-- Case Study 3: Thumbnail Left, Text Right -->
+    <div class="case-study">
+      <div class="case-image">
+        <img src="./images/Careerforge-new.png" alt="Thumbnail image of Case Study 3">
+      </div>
+      <div class="case-content">
+        <h2>CareerForge: An Intuitive Job Search Platform</h2>
+        <p>Curabitur eleifend, lacus a ultricies semper, risus ex cursus eros, ac sollicitudin lectus ligula non nisi.</p>
+      </div>
+    </div>
+
+
+    <!-- Case Study 4: Thumbnail Right, Text Left -->
+    <div class="case-study reverse">
+      <div class="case-image">
+        <img src="./images/GPT for Comms.png" alt="Thumbnail image of Case Study 4">
+      </div>
+      <div class="case-content">
+        <h2>GPT for Communication: How can GPT Bridge the Communication Gap between Students and Universities?
+        </h2>
+        <p>Sed euismod, turpis non bibendum dictum, urna dui placerat ipsum, at porttitor sapien elit a arcu. Vivamus varius sapien non quam cursus, at vestibulum orci dapibus.</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <footer>
+    <p>&copy; 2025 Aliza Lim</p>
+  </footer>
+
+  <script defer src="js/main.js"></script>
+
+
+</body>
+</html> 
