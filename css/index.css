@@ -102,7 +102,6 @@ nav {
 /* Hide primary button on mobile nav if you want it only in header */
 .nav-links .btn-primary {
   display: block; /* Keep it visible in mobile menu */
-  margin-top: 1rem; /* Space from other links */
 }
 
 /* Desktop Navigation */
