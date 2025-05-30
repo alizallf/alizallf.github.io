@@ -1,0 +1,552 @@
+:root {
+  --color-pink: #D946EF;
+  --color-purple: #8B5CF6;
+  --color-blue: #0EA5E9;
+  --color-pink-dark: #C026D3;
+  --color-purple-dark: #7C3AED;
+  --color-blue-dark: #0284C7;
+  --color-text: #1a1a1a;
+  --color-text-dark: #0a0a0a;
+  --color-text-muted: #4b5563;
+  --container-width: 1400px; /* This is largely overridden by max-width on .container */
+  --spacing-base: 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem; /* Adds padding on left and right for small screens */
+}
+
+/* --- Navigation --- */
+.nav-header {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-decoration: none;
+  background: linear-gradient(to right, var(--color-purple), var(--color-pink), var(--color-blue));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Mobile Nav Toggle Button (Hamburger) */
+.nav-toggle {
+  display: block; /* Visible by default on mobile */
+  font-size: 1.75rem; /* Larger for easier tapping */
+  color: var(--color-purple);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.5rem; /* Add padding for touch target */
+}
+
+/* Navigation Links - Mobile First */
+.nav-links {
+  display: none; /* Hidden by default */
+  flex-direction: column; /* Stack vertically on mobile */
+  position: absolute; /* Position over content */
+  top: 100%; /* Below the header */
+  left: 0;
+  width: 100%;
+  background-color: white; /* Or your preferred background */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  z-index: 1000; /* Ensure it's above other content */
+  align-items: center; /* Center links */
+  gap: 1rem; /* Spacing between links */
+}
+
+.nav-links.active {
+  display: flex; /* Show when active */
+}
+
+.nav-links a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 1rem; /* Slightly larger for mobile readability */
+  font-weight: 500;
+  padding: 0.5rem 1rem; /* Padding for tap area */
+  transition: color 0.2s;
+  width: 100%; /* Make links full width of dropdown */
+  text-align: center; /* Center text */
+}
+
+.nav-links a:hover {
+  color: var(--color-purple);
+}
+
+/* Hide primary button on mobile nav if you want it only in header */
+.nav-links .btn-primary {
+  display: block; /* Keep it visible in mobile menu */
+  margin-top: 1rem; /* Space from other links */
+}
+
+/* Desktop Navigation */
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none; /* Hide hamburger on desktop */
+  }
+
+  .nav-links {
+    display: flex; /* Show links on desktop */
+    flex-direction: row; /* Layout horizontally */
+    position: static; /* Remove absolute positioning */
+    top: auto;
+    left: auto;
+    width: auto;
+    background-color: transparent; /* No background */
+    box-shadow: none;
+    padding: 0;
+    z-index: auto;
+    gap: 2rem; /* Spacing between links */
+  }
+
+  .nav-links a {
+    font-size: 0.875rem; /* Desktop font size */
+    padding: 0; /* No extra padding */
+    width: auto; /* Auto width */
+    text-align: left; /* Default text align */
+  }
+
+  .nav-links .btn-primary {
+    background-color: var(--color-purple);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s;
+  }
+
+  .nav-links .btn-primary:hover {
+    background-color: var(--color-purple-dark);
+  }
+}
+
+/* --- Buttons --- */
+.btn-primary, .btn-outline {
+  padding: 0.6rem 1.2rem; /* Slightly more padding for touch */
+  border-radius: 0.375rem;
+  font-size: 0.9rem; /* Slightly larger for mobile readability */
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--color-purple);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-purple-dark);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--color-pink);
+  color: var(--color-pink-dark);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-pink);
+  color: white;
+}
+
+/* --- Hero Section --- */
+.hero {
+  padding: 3rem 0; /* Slightly less padding on mobile */
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column-reverse; /* Image below text on mobile */
+  gap: 2.5rem; /* Slightly less gap on mobile */
+  align-items: center; /* Center items on mobile */
+  text-align: center; /* Center text on mobile */
+}
+
+.hero h1 {
+  font-size: 2rem; /* Smaller font size for mobile H1 */
+  font-weight: 700;
+  margin-bottom: 0.75rem; /* Reduced margin */
+}
+
+.gradient-text {
+  background: linear-gradient(to right, var(--color-purple), var(--color-pink), var(--color-blue));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.gradient-text.darker {
+  background: linear-gradient(to right,
+    color-mix(in srgb, var(--color-purple) 70%, black),
+    color-mix(in srgb, var(--color-pink) 70%, black),
+    color-mix(in srgb, var(--color-blue) 70%, black));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero .subtitle {
+  font-size: 1.1rem; /* Adjusted for mobile */
+  color: var(--color-text-muted);
+  margin-bottom: 1rem; /* Reduced margin */
+}
+
+.hero .description {
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem; /* Reduced margin */
+  max-width: 32rem;
+  margin-left: auto; /* Center text block */
+  margin-right: auto; /* Center text block */
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column; /* Stack buttons on mobile */
+  gap: 0.75rem; /* Closer gap */
+  width: 100%; /* Allow buttons to take full width */
+  max-width: 300px; /* Constrain button group width */
+  margin: 0 auto; /* Center button group */
+}
+
+.button-group .btn-primary,
+.button-group .btn-outline {
+  width: 100%; /* Make buttons full width in group */
+  text-align: center;
+  justify-content: center; /* For mailto button content */
+}
+
+.hero-image {
+  flex: none; /* Don't grow */
+  width: 90%; /* Control image container width on mobile */
+  max-width: 400px; /* Prevent image from becoming too large */
+  margin: 0 auto; /* Center image */
+}
+
+.hero-image img {
+  width: 100%; /* Image fills its container */
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 4rem 0; /* Restore desktop padding */
+  }
+
+  .hero-content {
+    flex-direction: row; /* Image and text side-by-side on desktop */
+    gap: 3rem; /* Restore desktop gap */
+    align-items: center;
+    text-align: left; /* Align text left */
+  }
+
+  .hero-text {
+    flex: 1; /* Allow text to take space */
+  }
+
+  .hero h1 {
+    font-size: 3.5rem; /* Desktop H1 size */
+    margin-bottom: 1rem;
+  }
+
+  .hero .subtitle {
+    font-size: 1.25rem; /* Desktop subtitle size */
+    margin-bottom: 1.5rem;
+  }
+
+  .hero .description {
+    margin-bottom: 2rem;
+    margin-left: unset; /* Remove auto margins */
+    margin-right: unset;
+  }
+
+  .button-group {
+    flex-direction: row; /* Buttons side-by-side on desktop */
+    gap: 1rem;
+    width: auto; /* Auto width */
+    max-width: none;
+    margin: unset; /* Remove auto margins */
+  }
+
+  .button-group .btn-primary,
+  .button-group .btn-outline {
+    width: auto; /* Auto width */
+  }
+
+  .hero-image {
+    flex: 1; /* Allow image to take space */
+    width: auto; /* Auto width */
+    max-width: none;
+    margin: unset; /* Remove auto margins */
+  }
+}
+
+/* --- Featured Work Section --- */
+.featured-work {
+  padding: 3rem 0; /* Adjusted for mobile */
+  background-color: #f9fafb;
+}
+
+.featured-work h2,
+.contact h2 {
+  font-size: 1.75rem; /* Smaller for mobile H2 */
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.section-description {
+  text-align: center;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem; /* Adjusted for mobile */
+  font-size: 1rem; /* Adjusted for mobile */
+}
+
+.project-grid {
+  display: grid;
+  gap: 1.5rem; /* Smaller gap on mobile */
+  grid-template-columns: 1fr; /* Single column on mobile */
+}
+
+.project-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.2s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:nth-child(1) { transition-delay: 0.1s; }
+.project-card:nth-child(2) { transition-delay: 0.2s; }
+.project-card:nth-child(3) { transition-delay: 0.3s; }
+.project-card:nth-child(4) { transition-delay: 0.4s; }
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 1.25rem; /* Slightly less padding */
+}
+
+.project-content h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem; /* Adjust heading size */
+}
+
+.project-content p {
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem; /* Adjusted margin */
+  font-size: 0.95rem; /* Adjust paragraph size */
+}
+
+.link-arrow {
+  color: var(--color-purple-dark);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem; /* Adjust link size */
+}
+
+@media (min-width: 768px) {
+  .featured-work {
+    padding: 4rem 0; /* Restore desktop padding */
+  }
+
+  .featured-work h2,
+  .contact h2 {
+    font-size: 2rem; /* Restore desktop H2 size */
+  }
+
+  .section-description {
+    margin-bottom: 3rem;
+    font-size: 1.25rem;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Restore desktop grid */
+    gap: 2rem;
+  }
+
+  .project-content {
+    padding: 1.5rem;
+  }
+  .project-content h3 {
+    font-size: 1.35rem; /* Desktop heading size */
+  }
+  .project-content p {
+    font-size: 1rem; /* Desktop paragraph size */
+  }
+  .link-arrow {
+    font-size: 1rem; /* Desktop link size */
+  }
+}
+
+/* --- Contact Section --- */
+.contact {
+  padding: 3rem 0; /* Adjusted for mobile */
+}
+
+.contact-card {
+  background: linear-gradient(to right, rgba(208, 208, 245, 0.2), rgba(245, 208, 229, 0.2), rgba(208, 229, 245, 0.2));
+  padding: 1.5rem; /* Slightly less padding */
+  border-radius: 1rem;
+  text-align: center;
+  margin-bottom: 1.5rem; /* Adjusted margin */
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.btn-primary[href^="mailto:"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.btn-primary[href^="mailto:"]:hover {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem; /* Slightly less gap */
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-text-muted);
+  transition: color 0.2s;
+}
+
+.icon:hover {
+  color: var(--color-purple-dark);
+}
+
+@media (min-width: 768px) {
+  .contact {
+    padding: 4rem 0; /* Restore desktop padding */
+  }
+  .contact-card {
+    padding: 2rem; /* Restore desktop padding */
+    margin-bottom: 2rem;
+  }
+  .social-links {
+    gap: 1.5rem; /* Restore desktop gap */
+  }
+}
+
+/* --- Footer --- */
+footer {
+  padding: 1.5rem 0; /* Adjusted for mobile */
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center; /* Center text on mobile */
+}
+
+.copyright {
+  color: var(--color-text-muted);
+  font-size: 0.8rem; /* Smaller font for mobile */
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap; /* Allow links to wrap */
+  justify-content: center; /* Center links if they wrap */
+  gap: 1rem; /* Smaller gap */
+}
+
+.footer-links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.8rem; /* Smaller font for mobile */
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--color-purple-dark);
+}
+
+@media (min-width: 768px) {
+  footer {
+    padding: 2rem 0; /* Restore desktop padding */
+  }
+
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left; /* Align text left */
+  }
+
+  .copyright {
+    font-size: 0.875rem; /* Restore desktop font size */
+  }
+
+  .footer-links {
+    flex-wrap: nowrap; /* No wrapping on desktop */
+    justify-content: flex-start; /* Align left */
+    gap: 1.5rem; /* Restore desktop gap */
+  }
+
+  .footer-links a {
+    font-size: 0.875rem; /* Restore desktop font size */
+  }
+}
