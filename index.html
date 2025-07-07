@@ -15,7 +15,7 @@
           <a href="/" class="logo">Aliza L</a>
           <div class="nav-links">
             <a href="#work" style="text-align: center;">Work</a>
-            <a href="./Aliza L Resume (May 2025).pdf" class="btn-primary" download>Resume</a>
+            <a href="./Aliza Lim Resume (July 2025).pdf" class="btn-primary" download>Resume</a>
           </div>
         </nav>
       </div>
@@ -31,7 +31,7 @@
               <p class="description">With a background in business and a Master’s in Human-Computer Interaction, I create thoughtful, user-centered experiences that align with real-world needs and deliver measurable value.</p>
               <div class="button-group">
                 <a href="#work" class="btn-primary scroll-btn">View My Work</a>
-                <a href="./Aliza L Resume (May 2025).pdf" class="btn-outline" download>View my Resume</a>
+                <a href="./Aliza Lim Resume (July 2025).pdf" class="btn-outline" download>View my Resume</a>
               </div>
             </div>
             <div class="hero-image">
@@ -47,7 +47,7 @@
           <h2>Featured Work</h2>
           <p class="section-description">A selection of my latest projects and collaborations</p>
           <div class="project-grid">
-            <article class="project-card animate-on-scroll">
+            <article class="project-card animate-on-scroll" id="project-card-01">
               <div class="project-image">
                 <img src="../images/test-to-own-showcase.png" 
                      alt="Test to Own">
@@ -62,7 +62,7 @@
             </article>
     
 
-            <article class="project-card animate-on-scroll">
+            <article class="project-card animate-on-scroll" id="project-card-02">
               <div class="project-image">
                 <img src="../images/-Buy Online - Header img.png" 
                      alt="Redefining Car Buying">
@@ -74,7 +74,7 @@
               </div>
             </article>
 
-            <article class="project-card animate-on-scroll">
+            <article class="project-card animate-on-scroll" id="project-card-03">
               <div class="project-image">
                 <img src="../images/GPT for Comms.png" 
                      alt="GPT for Communication">
@@ -86,7 +86,7 @@
               </div>
             </article>
 
-            <article class="project-card animate-on-scroll">
+            <article class="project-card animate-on-scroll" id="project-card-04">
               <div class="project-image">
                 <img src="../images/Market Comparison V1.png" 
                      alt="One Hub to Rule Them All (Coming Soon)">
@@ -191,5 +191,80 @@
         observer.observe(elem);
       });
     </script>
+
+    <!-- Project Card 01 -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const card = document.getElementById('project-card-01');
+
+        if (card) {
+          card.addEventListener("click", (e) => {
+            if (!e.target.closest("a")) {
+              window.location.href = "../test-to-own.html";
+            }
+          });
+        } else { /* No Op */ }
+      });
+    </script>
+    <!-- END OF: Project Card 01 -->
+
+
+    <!-- Project Card 02 -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const card = document.getElementById('project-card-02');
+
+        if (card) {
+          card.addEventListener("click", (e) => {
+            if (!e.target.closest("a")) {
+              window.location.href = "../buy-online.html";
+            }
+          });
+        } else { /* No Op */ }
+      });
+    </script>
+    <!-- END OF: Project Card 02 -->
+
+
+    <!-- Project Card 02 -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const card = document.getElementById('project-card-02');
+
+        if (card) {
+          card.addEventListener("click", (e) => {
+            if (!e.target.closest("a")) {
+              window.location.href = "../buy-online.html";
+            }
+          });
+        } else { /* No Op */ }
+      });
+    </script>
+    <!-- END OF: Project Card 02 -->
+
+
+    <!-- Project Card 03 -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const card = document.getElementById('project-card-03');
+
+        if (card) {
+          card.addEventListener("click", (e) => {
+            if (!e.target.closest("a")) {
+              window.location.href = "../gpt-for-comms.html";
+            }
+          });
+        } else { /* No Op */ }
+      });
+    </script>
+    <!-- END OF: Project Card 03 -->
+
+
+    
+
+    
+
+
+
   </body>
 </html>

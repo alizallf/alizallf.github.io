@@ -549,3 +549,7 @@ footer {
     font-size: 0.875rem; /* Restore desktop font size */
   }
 }
+
+.project-card {
+  cursor: pointer;
+}

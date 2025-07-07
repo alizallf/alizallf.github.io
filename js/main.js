@@ -92,4 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
             window.open(headerImage.parentElement.href, "_blank");
         });
     }
+
+
 });
